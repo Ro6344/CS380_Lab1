@@ -63,7 +63,7 @@ class Node{
             return; 
          }
          //current node 
-         System.out.println(root.value + " ");
+         System.out.print(root.value + ", ");
          
          //recursively travel left subtree
          preOrderTraversal(root.left);
@@ -86,7 +86,7 @@ class Node{
          inOrderTraversal(root.left);
          
          //current node 
-         System.out.println(root.value + " ");
+         System.out.print(root.value + ", ");
          
          //recursively travel right subtree
          inOrderTraversal(root.right);
@@ -111,7 +111,7 @@ class Node{
          postOrderTraversal(root.right);
          
          //current node 
-         System.out.println(root.value + " "); 
+         System.out.print(root.value + ", "); 
 	   }
 	   
 	   
@@ -140,8 +140,19 @@ class Node{
 	   with a smallest key
 	   */
 	   public int getMin(Node root){
-         //implement in here
-	      
+         //check if the tree is empty 
+         if (root == null){
+            System.out.println("The tree is empty"); 
+         }
+         //start from the root 
+         Node current = root; 
+         //while left subtree is not null
+         while (current.left != null){
+            //traverse to the leftmost node 
+            current = current.left;        
+         }
+         //return value of the leftmost node
+	      return current.value;
 	   }
 	  
 	  
@@ -152,6 +163,7 @@ class Node{
 	   */
 	   public int getMax(Node root){
          //implement in here
+         return 5; 
 	   }
 	   
 	   
@@ -206,7 +218,21 @@ class Node{
 	            
 	      System.out.print("in-order :   ");
 	      t1.inOrderTraversal(t1.root);
-	      System.out.println();
+         System.out.println();
+         System.out.print("pre-order :   ");
+         t1.preOrderTraversal(t1.root);
+         System.out.println();
+         System.out.print("post-order :   ");
+         t1.postOrderTraversal(t1.root);
+         System.out.println();
+         
+         System.out.print("Is 24 in the tree?: " + t1.find(t1.root, 24));
+         System.out.println();
+	      System.out.print("Is 3 in the tree?: " + t1.find(t1.root, 3));
+         System.out.println();
+         
+         System.out.println("The smallest value is: " + t1.getMin(t1.root));
+         
 	           
 	      
 	   }  
