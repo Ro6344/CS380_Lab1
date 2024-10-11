@@ -121,8 +121,16 @@ class Node{
 	   with a specific value
 	   */
 	   public boolean find(Node root, int key){
-		 //implement in here
-		  
+		   //base case 
+         if (root == null){
+            return false; 
+         }
+         //if the current node's value matches the key return true
+         if (root.value == key){
+            return true; 
+         }
+         //recursively search in the left and right subtree
+         return find(root.left, key) || find(root.right, key);
 	   }
 	   
 	   
