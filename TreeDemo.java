@@ -162,8 +162,22 @@ class Node{
 	   with a largest key
 	   */
 	   public int getMax(Node root){
-         //implement in here
-         return 5; 
+         //check if the tree is empty 
+         if(root == null){
+            System.out.println("The tree is empty");
+         }
+         
+         //start from current node
+         Node current = root; 
+         
+         //while right subtree is not null
+         while (current.right != null){
+            //traverse to the rightmost node 
+            current = current.right;
+         
+         }
+         //return rightmost node 
+         return current.value ; 
 	   }
 	   
 	   
@@ -232,7 +246,7 @@ class Node{
          System.out.println();
          
          System.out.println("The smallest value is: " + t1.getMin(t1.root));
-         
+         System.out.println("The biggest value is: " + t1.getMax(t1.root));
 	           
 	      
 	   }  
