@@ -64,9 +64,11 @@ class Node{
          }
          //current node 
          System.out.println(root.value + " ");
-         //recursively travel left
+         
+         //recursively travel left subtree
          preOrderTraversal(root.left);
-         //recursively travel right
+         
+         //recursively travel right subtree
          preOrderTraversal(root.right);		   
 	   }
 
@@ -76,7 +78,19 @@ class Node{
 	   in-order traversal
 	   */
 	   public void inOrderTraversal(Node root){
-	      //implement in here
+	      //base case 
+         if(root == null){
+            return; 
+         }
+         //recursively travel left subtree
+         inOrderTraversal(root.left);
+         
+         //current node 
+         System.out.println(root.value + " ");
+         
+         //recursively travel right subtree
+         inOrderTraversal(root.right);
+         
 	   }
 	   
 	   
