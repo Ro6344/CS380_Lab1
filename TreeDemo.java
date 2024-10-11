@@ -100,8 +100,18 @@ class Node{
 	   */
 	  
 	   public void postOrderTraversal(Node root){
-         //implement in here
-		   
+         //base case
+         if (root == null){
+            return;
+         }
+         //recursively travel left subtree 
+         postOrderTraversal(root.left);
+         
+         //recursively travel right subtree 
+         postOrderTraversal(root.right);
+         
+         //current node 
+         System.out.println(root.value + " "); 
 	   }
 	   
 	   
